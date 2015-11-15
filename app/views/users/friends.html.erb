@@ -1,0 +1,12 @@
+
+<% @friends.each do |f| %>
+	
+	<h4><%= link_to f.name , user_path(f.id)%></h4>
+	<% if @online == true %>
+		<%= form_tag("/users/remove/" + f[:id].to_s ,method: "post") do %> 
+		    <button type="submit"> Unfriend</button>
+		<% end %>
+	<% end %>
+
+	<h4>*******************</h4>
+<% end %>

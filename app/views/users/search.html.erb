@@ -1,0 +1,38 @@
+<%if params[:search]%>
+
+	<% @friends.each do |f| %>
+		<h3>
+			<%=f.name %> ---- friends
+			<%= form_tag("/users/remove/" + f[:id].to_s ,method: "post") do %> 
+		    	<button type="submit"> Unfriend</button>
+		    <% end %>			
+		</h3>
+	<% end %>
+
+	<% @requested.each do |r| %>
+		<h3>
+			<%=r.name %>
+			<%= form_tag("/users/accept/" + r[:id].to_s ,method: "post") do %> 
+				<button type="submit"> Accept</button>
+			<% end %>
+			<%= form_tag("/users/reject/" + r[:id].to_s ,method: "post") do %> 
+				<button type="submit"> Reject</button>
+			<% end %>
+		</h3>
+	<% end %>
+
+	<% @pending.each do |p| %>
+		<h3><%=p.name %> ---- Waiting for his response</h3>
+	<% end %>
+
+	<% @not_friends.each do |n| %>
+		<h3>
+			<%=n.name %>
+			<%= form_tag("/users/add_friend/" + n[:id].to_s ,method: "post") do %> 
+		    	<button type="submit"> Add Friend</button>
+		    <% end %>
+		</h3>
+	<% end %>
+
+<% end %>
+

@@ -1,0 +1,34 @@
+
+<% if @user %>
+	<%= image_tag(@user.picture) %>
+	<div>
+		<h4>User Name: <%= @user.name %> </h4>
+		<h4>Logged in with: <%= @user.provider %> </h4>
+		<h4>Email: <%= @user.email %> </h4>
+	</div>
+<% end %>
+
+<h3><%= link_to "Friends" , "friends/"+@user[:id].to_s ,method: "post"%></h3>
+</br>
+
+<h2>New Post</h2>
+<h3>
+  <%= link_to "Quote" , "../posts/new_quote"%>
+  <%= link_to "Review" , "../posts/new_review"%>
+  <%= link_to "Status" , "../posts/new_status"%>
+</h3>
+
+</br>
+
+<h2>Posts</h2>
+<% @posts.each do |post| %>
+	<div>
+	    <h5>Book: <%=post.book %></h5>
+	    <h5>Author: <%=post.author %></h5>
+	    <h5>Type: <%=post.genre %></h5>
+	    <h6><%=post.content %></h6>
+	    <h6><%= link_to "Open" , post%></h6>
+	    <h4> ---------------------------- </h4>
+    </div>
+<% end %>
+

@@ -1,0 +1,12 @@
+
+<% @friend_request.each do |request| %>
+	
+	<h4><%=request.name%></h4>
+	<%= form_tag("/users/accept/" + request[:id].to_s ,method: "post") do %> 
+		<button class="btn" type="submit"> Accept</button>
+	<% end %>
+	<%= form_tag("/users/reject/" + request[:id].to_s ,method: "post") do %> 
+		<button class="btn" type="submit"> Reject</button>
+	<% end %>
+	<h4>------------------------</h4>
+<% end %>

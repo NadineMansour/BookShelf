@@ -1,0 +1,15 @@
+<h3>
+  <%= link_to "All" , "newsfeed"%>
+  <%= link_to "Quotes" , "quotes"%>
+  <%= link_to "Reviews" , "reviews"%>
+  <%= link_to "Status" , "status"%>
+</h3>
+<% @reviews.each do |nf| %>
+	
+	<h3><%=nf.book%></h3>
+	<h4><%=nf.author%></h4>
+	<h5><%=nf.content%></h5>
+	<h6><%= link_to "Open" , nf%></h6>
+	<h4>------------------------</h4>
+	
+<% end %>

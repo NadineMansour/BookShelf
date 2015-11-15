@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  timeline_id: 
+  book: MyString
+  author: MyString
+  content: MyString
+  genre: MyString
+
+two:
+  user_id: 
+  timeline_id: 
+  book: MyString
+  author: MyString
+  content: MyString
+  genre: MyString
