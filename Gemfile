@@ -45,4 +45,7 @@ end
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'rabl'
+gem 'responders'
+gem 'fb_graph2'
 

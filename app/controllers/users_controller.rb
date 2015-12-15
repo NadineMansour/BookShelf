@@ -91,6 +91,7 @@ class UsersController < ApplicationController
 		if params[:user_id].to_i  == current_user.id
 			@online = true
 		end
+		#respond_with(@online)
 	end
 
   	def newsfeed

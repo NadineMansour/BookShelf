@@ -35,6 +35,49 @@ Rails.application.routes.draw do
     end
   end
 
+
+    # API
+  namespace :api, defaults: { format: :json } do
+
+    resources :sessions, only: :create 
+    
+    resources :users do
+      collection do
+        get :get_current_user
+        post :get_user
+        get :get_friends
+        post :remove_friend
+        get :requests
+        post :accept
+        post :reject
+        post :friends_search
+        post :requests_search
+        post :pending_search
+        post :not_friends_search
+        post :add_friend
+        post :friends_of_friend
+      end
+    end
+
+    resources :posts do
+      collection do
+        get :get_timeline
+        get :get_newsfeed
+        post :get_related_comments
+        post :new_quote
+        post :new_review
+        post :new_status
+        post :friends_posts
+      end
+    end
+
+    resources :comments do
+      collection do
+        post :add_comment
+      end
+    end
+  end
+
   
   
   get 'home/index' => 'home#index'
